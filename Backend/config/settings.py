@@ -3,6 +3,7 @@ Django settings for config project.
 """
 
 from pathlib import Path
+import os
 from decouple import config
 from datetime import timedelta
 
@@ -87,16 +88,16 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #         'PORT': config('DB_PORT'),
 #     }
 # }
+import os
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-
-        # Railway PostgreSQL variables (falls back to local .env)
-        'NAME': config('PGDATABASE', default=config('DB_NAME')),
-        'USER': config('PGUSER', default=config('DB_USER')),
-        'PASSWORD': config('PGPASSWORD', default=config('DB_PASSWORD')),
-        'HOST': config('PGHOST', default=config('DB_HOST')),
-        'PORT': config('PGPORT', default=config('DB_PORT')),
+        'NAME': os.getenv('PGDATABASE') or config('DB_NAME'),
+        'USER': os.getenv('PGUSER') or config('DB_USER'),
+        'PASSWORD': os.getenv('PGPASSWORD') or config('DB_PASSWORD'),
+        'HOST': os.getenv('PGHOST') or config('DB_HOST'),
+        'PORT': os.getenv('PGPORT') or config('DB_PORT'),
     }
 }
 
