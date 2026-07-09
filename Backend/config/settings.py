@@ -88,8 +88,6 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #         'PORT': config('DB_PORT'),
 #     }
 # }
-import os
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
