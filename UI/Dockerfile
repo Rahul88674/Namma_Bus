@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
+RUN echo "API=$VITE_API_BASE_URL" && npm run build
 
 RUN npm install -g serve
 
