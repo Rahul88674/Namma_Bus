@@ -166,6 +166,7 @@ SIMPLE_JWT = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",   # Vite default
     "http://localhost:3000",   # CRA default
+    "https://nammabusui.up.railway.app",
 ]
 
 # """
