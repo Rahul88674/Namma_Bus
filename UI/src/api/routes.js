@@ -1,11 +1,3 @@
-// import api from './axios';
-
-// export const searchTrips = (params) => api.get('/routes/search/', { params });
-// export const getRoutes = () => api.get('/routes/routes/');
-// export const createRoute = (data) => api.post('/routes/routes/', data);
-// export const getTrips = () => api.get('/routes/trips/');
-// export const createTrip = (data) => api.post('/routes/trips/', data);
-// export const getTripById = (id) => api.get(`/routes/trips/${id}/`);
 import api from './axios';
 
 export const searchTrips = (params) => api.get('/routes/search/', { params });
